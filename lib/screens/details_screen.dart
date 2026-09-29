@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+
+import '../models/movie.dart';
+
 class DetailsScreen extends StatelessWidget {
   final Movie movie;
   const DetailsScreen({super.key, required this.movie});
@@ -11,7 +15,17 @@ class DetailsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Hero poster
-            Image.asset(movie.posterPath, height: 220, width: double.infinity, fit: BoxFit.cover),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: SizedBox(
+                width: double.infinity,
+                height: 400,
+                child: Image.asset(
+                  movie.posterPath,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             // Title, cast, synopsis…
           ],
         ),
