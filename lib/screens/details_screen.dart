@@ -26,6 +26,32 @@ class DetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    movie.title,
+                    style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Cast', 
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(movie.cast.join(', ')),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Synopsis', 
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(movie.synopsis),
+                ],
+              ),
+            ),
             // Title, cast, synopsis…
           ],
         ),
